@@ -7,11 +7,14 @@ def get(name):
     found = False
     for person in customer_list:
         if person[1] == name:
-            print(person)
+            print('id: {}, name: {}, email: {}, phone: {}'.format(person[0], person[1], person[2], person[3]))
             found = True
     if found is False:
         print('not found')
 
+def get_all():
+    for person in customer_list:
+        print('id: {}, name: {}, email: {}, phone: {}'.format(person[0], person[1], person[2], person[3]))
 
 def post(name, email, phone_number):
     if len(phone_number) <= 12 and phone_number[0] != '0' and len(name) <= 25:
@@ -44,7 +47,10 @@ def make_queries():
     while True:
         query = input().split()
         if query[0] == 'get':
-            get(query[1])
+            if query[1] == 'all':
+                get_all()
+            else:
+                get(query[1])
         elif query[0] == 'post':
             post(query[1], query[2], query[3])
         elif query[0] == 'del':
