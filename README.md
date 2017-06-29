@@ -4,7 +4,7 @@ Python query application example for customer data excel file handling. In this 
 
 In this application you'll see the following in action:
 
-* File handeling
+* File handling
 * Functions
 * Lists
 * Formating
